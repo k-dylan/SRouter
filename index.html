@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+</head>
+<body>
+    <a href="/post">/post</a> <br>
+    <a href="/post/123">/post/123</a>
+    
+    <p id="content"></p>
+    <script src="/src/SRouter.js"></script>
+    <script>
+        var as = document.getElementsByTagName('a');
+        var content = document.getElementById('content');
+        Array.prototype.forEach.call(as, function (item) {
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                SRouter.go(item.getAttribute('href'));
+            })
+        })
+        
+        SRouter.config({
+            // mode: 'history'
+        }).add('/post','post', function () {
+            content.innerHTML = 'post'
+        }).add('/post/:postid', function (router) {
+            content.innerHTML = JSON.stringify(router);
+        }).default(function () {
+            content.innerHTML = '都不匹配';
+        }).listen();
+    </script>
+</body>
+</html>

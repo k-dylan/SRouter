@@ -1,0 +1,24 @@
+{
+  "name": "srouter",
+  "version": "1.0.0",
+  "description": "支持`pushState` 和 `hash` 两种方式的前端路由",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-dylan/SRouter.git"
+  },
+  "keywords": [
+    "router"
+  ],
+  "author": "dylan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-dylan/SRouter/issues"
+  },
+  "homepage": "https://github.com/k-dylan/SRouter#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0"
+  }
+}
