@@ -18,10 +18,10 @@
                 event.preventDefault();
                 SRouter.go(item.getAttribute('href'));
             })
-        })
+        });
         
         SRouter.config({
-            // mode: 'history'
+            mode: 'history'
         }).add('/post','post', function () {
             content.innerHTML = 'post'
         }).add('/post/:postid', function (router) {
