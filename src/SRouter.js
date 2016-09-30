@@ -18,7 +18,7 @@
         config: function (options) {
             this.mode = options && options.mode == 'history' 
                         &&  !!(history.pushState) ? 'history' : 'hash';
-                        
+  
             return this;
         },
         /**
@@ -64,12 +64,14 @@
             // 绑定监听事件            
             if(this.mode === 'history'){
                 this._addEvent(window, 'popstate', function () {
-                    var path = location.path;
+                    var path = location.pathname;
+                                        
                     self._check(path);
                 });
             } else {
                 this._addEvent(window, 'hashchange', function () {
                     var path = location.hash.replace(/^#/,'');
+
                     self._check(path);
                 });
             } 
